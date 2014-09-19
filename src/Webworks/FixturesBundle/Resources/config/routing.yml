@@ -1,3 +1,0 @@
-webworks_fixtures_homepage:
-    path:     /hello/{name}
-    defaults: { _controller: WebworksFixturesBundle:Default:index }

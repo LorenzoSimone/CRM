@@ -24,6 +24,7 @@ class AppKernel extends Kernel
             new Webworks\UserBundle\WebworksUserBundle(),
             new Webworks\DashboardBundle\WebworksDashboardBundle(),
             new Webworks\FixturesBundle\WebworksFixturesBundle(),
+            new Webworks\FrontendBundle\WebworksFrontendBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

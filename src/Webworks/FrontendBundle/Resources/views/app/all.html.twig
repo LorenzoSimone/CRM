@@ -1,0 +1,43 @@
+{% extends '::base.html.twig' %}
+
+{% block crm_brand %}Webworks CRM{% endblock %}
+
+{% block meta %}
+{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {% stylesheets
+        '@WebworksFrontendBundle/Resources/public/css/style.css'
+    %}
+    <link rel="stylesheet" href="{{ asset_url }}">
+    {% endstylesheets %}
+{% endblock %}
+
+{% block title %}
+    {% block page_title %}Title not set!{% endblock %} - {{ block('crm_brand') }}
+{% endblock %}
+
+{% block nav %}
+    {{ include('WebworksFrontendBundle:app:top/navbar.html.twig', {'brand': block('crm_brand')}) }}
+{% endblock %}
+
+{% block headline %}
+
+{% endblock %}
+
+{% block content %}
+
+{% endblock %}
+
+{% block footer %}
+    <div class="footer">
+        <div class="container-fluid">
+            <p class="text-muted">Place sticky footer content here.</p>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+{% endblock %}
