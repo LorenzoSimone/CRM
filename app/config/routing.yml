@@ -1,10 +1,6 @@
-webworks_fixtures:
-    resource: "@WebworksFixturesBundle/Resources/config/routing.yml"
-    prefix:   /
-
 webworks_dashboard:
     resource: "@WebworksDashboardBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /app
 
 WebworksUserBundle:
     resource: "@WebworksUserBundle/Resources/config/routing.yml"

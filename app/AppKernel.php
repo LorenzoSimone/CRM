@@ -18,6 +18,7 @@ class AppKernel extends Kernel
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
             new Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle(),
             new CBC\Bundle\BootstrapBundle\BootstrapBundle(),
+            new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle(),
 
             new FOS\UserBundle\FOSUserBundle(),
             new Webworks\UserBundle\WebworksUserBundle(),
