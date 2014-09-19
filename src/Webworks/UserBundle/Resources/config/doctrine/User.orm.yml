@@ -1,0 +1,20 @@
+Webworks\UserBundle\Entity\User:
+    type: entity
+    table: user_account
+    id:
+        id:
+            type: integer
+            generator:
+                strategy: AUTO
+    manyToMany:
+        groups:
+            targetEntity: Group
+            joinTable:
+                name: user_account2user_group
+                joinColumns:
+                    fk_user_account_id:
+                        referencedColumnName: id
+                inverseJoinColumns:
+                    fk_user_group_id:
+                        referencedColumnName: id
+    lifecycleCallbacks: {  }

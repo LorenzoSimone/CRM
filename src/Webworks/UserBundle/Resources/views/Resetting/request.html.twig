@@ -1,0 +1,7 @@
+{% extends "FOSUserBundle::layout.html.twig" %}
+
+{% block page_title %}Passwort{% endblock %}
+
+{% block fos_user_content %}
+    {% include "FOSUserBundle:Resetting:request_content.html.twig" with {"page_title": block('page_title')} %}
+{% endblock fos_user_content %}

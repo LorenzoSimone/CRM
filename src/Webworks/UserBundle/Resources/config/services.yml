@@ -1,0 +1,7 @@
+parameters:
+#    pleep_user.example.class: pleep\UserBundle\Example
+
+services:
+#    pleep_user.example:
+#        class: %pleep_user.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

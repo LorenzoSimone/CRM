@@ -1,0 +1,17 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+<form action="{{ path('fos_user_resetting_send_email') }}" method="POST" class="fos_user_resetting_request form-signin" role="form">
+    <h2 class="form-signin-heading">{{ page_title }} <a href="{{ path('webworks_dashboard_index') }}"><small class="text-muted">| Webworks CRM</small></a></h2>
+
+    {% if invalid_username is defined %}
+        <div class="alert alert-warning">{{ 'resetting.request.invalid_username'|trans({'%username%': invalid_username}) }}</div>
+    {% endif %}
+    <input type="text" id="username" name="username" required="required" class="form-control" placeholder="{{ 'resetting.request.username'|trans }}" />
+    <p>&nbsp;</p>
+    <button type="submit" class="btn btn-primary btn-lg btn-block">{{ 'resetting.request.submit'|trans }}</button>
+
+    <ul>
+        <li>Noch kein Account? <a href="{{ path('fos_user_registration_register') }}">Jetzt registrieren</a></li>
+        <li><a href="{{ path('fos_user_security_login') }}">Anmelden</a></li>
+    </ul>
+</form>

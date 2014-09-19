@@ -1,0 +1,3 @@
+webworks_dashboard_index:
+    path:     /
+    defaults: { _controller: WebworksDashboardBundle:Default:index }

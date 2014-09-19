@@ -1,0 +1,7 @@
+parameters:
+#    webworks_dashboard.example.class: Webworks\DashboardBundle\Example
+
+services:
+#    webworks_dashboard.example:
+#        class: %webworks_dashboard.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

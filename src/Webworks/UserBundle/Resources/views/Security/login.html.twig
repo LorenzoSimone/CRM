@@ -1,0 +1,29 @@
+{% extends "FOSUserBundle::layout.html.twig" %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block page_title %}Anmelden{% endblock %}
+
+{% block content %}
+    {% block fos_user_content %}
+        {% if error %}
+            <div>{{ error|trans }}</div>
+        {% endif %}
+
+        <form action="{{ path("fos_user_security_check") }}" method="post" class="form-signin" role="form">
+            <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+
+            <h2 class="form-signin-heading">{{ block('page_title') }} <a href="{{ path('webworks_dashboard_index') }}"><small class="text-muted">| Webworks CRM</small></a></h2>
+            <input class="form-control" type="text" id="username" name="_username" value="{{ last_username }}" placeholder="Email address" required autofocus>
+            <input class="form-control" type="password" id="password" name="_password" required="required" placeholder="Password">
+            <label class="checkbox">
+                <input type="checkbox" id="remember_me" name="_remember_me" value="on" /> <label for="remember_me">{{ 'security.login.remember_me'|trans }}</label>
+            </label>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">{{ 'security.login.submit'|trans }}</button>
+            <ul>
+                <li>Noch kein Account? <a href="{{ path('fos_user_registration_register') }}">Jetzt registrieren</a></li>
+                <li><a href="{{ path('fos_user_resetting_request') }}">Passwort vergessen?</a></li>
+            </ul>
+        </form>
+    {% endblock %}
+{% endblock %}
