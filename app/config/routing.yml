@@ -1,3 +1,7 @@
+webworks_client:
+    resource: "@WebworksClientBundle/Resources/config/routing.yml"
+    prefix:   /app/clients
+
 webworks_dashboard:
     resource: "@WebworksDashboardBundle/Resources/config/routing.yml"
     prefix:   /app
@@ -5,7 +9,6 @@ webworks_dashboard:
 WebworksUserBundle:
     resource: "@WebworksUserBundle/Resources/config/routing.yml"
     prefix:   /
-
 
 fos_user_security:
     resource: "@FOSUserBundle/Resources/config/routing/security.xml"

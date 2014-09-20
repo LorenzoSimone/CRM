@@ -19,12 +19,14 @@ class AppKernel extends Kernel
             new Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle(),
             new CBC\Bundle\BootstrapBundle\BootstrapBundle(),
             new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle(),
-
+            new Knp\Bundle\MenuBundle\KnpMenuBundle(),
             new FOS\UserBundle\FOSUserBundle(),
+
             new Webworks\UserBundle\WebworksUserBundle(),
             new Webworks\DashboardBundle\WebworksDashboardBundle(),
             new Webworks\FixturesBundle\WebworksFixturesBundle(),
             new Webworks\FrontendBundle\WebworksFrontendBundle(),
+            new Webworks\ClientBundle\WebworksClientBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

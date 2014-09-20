@@ -23,7 +23,6 @@
 {% endblock %}
 
 {% block headline %}
-
 {% endblock %}
 
 {% block content %}
@@ -32,8 +31,8 @@
 
 {% block footer %}
     <div class="footer">
-        <div class="container-fluid">
-            <p class="text-muted">Place sticky footer content here.</p>
+        <div class="container-fluid text-muted">
+            &copy; 2014 <a href="http://www.webworks-nuernberg.de" target="_blank">Webworks Nürnberg</a>{% block footer_content %}{% endblock %}
         </div>
     </div>
 {% endblock %}

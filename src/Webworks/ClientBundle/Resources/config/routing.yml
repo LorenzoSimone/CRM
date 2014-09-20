@@ -1,0 +1,3 @@
+webworks_client_index:
+    path:     /index
+    defaults: { _controller: WebworksClientBundle:Default:index }
