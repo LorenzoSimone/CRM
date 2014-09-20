@@ -16,7 +16,10 @@
 {% block nav %}{% endblock %}
 
 {% block body %}
-    <div class="container-fluid">
+    <div class="col-md-2 sidebar">
+        {% block sidebar %}{% endblock %}
+    </div>
+    <div class="container-fluid col-md-offset-2 col-md-8">
         <h1>{% block headline %}{{ block('page_title') }}{% endblock %}</h1>
         {% block content %}
         {% endblock %}
