@@ -1,0 +1,8 @@
+{% extends 'WebworksFrontendBundle:app:all.html.twig' %}
+
+{% block page_title %}{% trans %}admin.index.title{% endtrans %}{% endblock %}
+
+{% block sidebar_menu_items %}
+    <h4>{% trans %}admin.sidebar.title{% endtrans %}</h4>
+    {{ knp_menu_render('WebworksAdminBundle:Builder:mainMenu', {'template': 'WebworksFrontendBundle:app:knp_menu.html.twig'}) }}
+{% endblock %}

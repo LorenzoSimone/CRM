@@ -1,3 +1,7 @@
+webworks_admin:
+    resource: "@WebworksAdminBundle/Resources/config/routing.yml"
+    prefix:   /app/admin
+
 webworks_client:
     resource: "@WebworksClientBundle/Resources/config/routing.yml"
     prefix:   /app/clients

@@ -1,0 +1,3 @@
+webworks_admin_index:
+    path:     /
+    defaults: { _controller: WebworksAdminBundle:Default:index }
