@@ -1,6 +1,6 @@
 {% extends '::base.html.twig' %}
 
-{% block crm_brand %}Webworks CRM{% endblock %}
+{% block crm_brand %}Webworks<strong style="color: #333;">CRM</strong>{% endblock %}
 
 {% block meta %}
 {% endblock %}
@@ -34,6 +34,7 @@
             </div>
 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                {{ knp_menu_render('WebworksFrontendBundle:Builder:mainMenu', {'template': 'WebworksFrontendBundle:app:knp_menu.html.twig'}) }}
                 <ul class="nav navbar-nav navbar-right">
                     {% block user_menu_items %}{% endblock %}
                 </ul>

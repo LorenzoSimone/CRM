@@ -1,0 +1,24 @@
+Webworks\AdminBundle\Entity\SystemModule:
+    type: entity
+    table: null
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        name:
+            type: string
+            length: 255
+        description:
+            type: text
+            nullable: true
+        active:
+            type: boolean
+            nullable: true
+        menuItemText:
+            type: string
+            length: 255
+            column: menu_item_text
+    lifecycleCallbacks: {  }

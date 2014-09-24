@@ -1,3 +1,7 @@
 webworks_admin_index:
     path:     /
     defaults: { _controller: WebworksAdminBundle:Default:index }
+
+webworks_admin_modules_index:
+    path:     /modules
+    defaults: { _controller: WebworksAdminBundle:Modules:index }

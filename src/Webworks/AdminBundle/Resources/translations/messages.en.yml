@@ -2,3 +2,4 @@ admin.index.title: Administration
 admin.sidebar.title: Administration
 menu.item.index: Overview
 admin.index.headline: 'Administration overview'
+menu.item.modules:    'Modules'

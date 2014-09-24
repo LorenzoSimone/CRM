@@ -30,9 +30,10 @@ class Builder extends ContainerAware {
 
     public function mainMenu(FactoryInterface $factory, array $options) {
         $menu = $factory->createItem('root');
-        $menu->setChildrenAttributes(array('class' => 'nav', 'currentClass' => 'active'));
+        $menu->setChildrenAttributes(array('class' => 'nav'));
 
         $menu->addChild('menu.item.index', array('route' => 'webworks_admin_index'));
+        $menu->addChild('menu.item.modules', array('route' => 'webworks_admin_modules_index'));
 
         return $menu;
     }
