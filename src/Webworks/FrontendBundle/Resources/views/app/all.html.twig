@@ -10,6 +10,7 @@
     {% stylesheets
         '@WebworksFrontendBundle/Resources/public/css/style.css'
         '@WebworksFrontendBundle/Resources/public/css/sidebar_nav.css'
+        '@WebworksFrontendBundle/Resources/public/css/filtertable.css'
     %}
     <link rel="stylesheet" href="{{ asset_url }}">
     {% endstylesheets %}
@@ -72,4 +73,9 @@
 
 {% block javascripts %}
     {{ parent() }}
+    {% javascripts
+        '@WebworksFrontendBundle/Resources/public/js/filtertable.js'
+    %}
+    <script type="text/javascript" src="{{ asset_url }}"></script>
+    {% endjavascripts %}
 {% endblock %}

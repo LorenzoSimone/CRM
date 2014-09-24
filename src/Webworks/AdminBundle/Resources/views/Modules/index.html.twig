@@ -1,0 +1,45 @@
+{% extends 'WebworksAdminBundle::base.html.twig' %}
+
+{% block page_title %}{% trans %}admin.modules.headline{% endtrans %}{% endblock %}
+
+{% block headline %}
+    {% trans %}admin.modules.headline{% endtrans %}
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="panel panel-primary filterable">
+                <div class="panel-heading">
+                    <h3 class="panel-title">{% trans %}admin.modules.headline{% endtrans %}</h3>
+                    <div class="pull-right">
+                        <button class="btn btn-default btn-xs btn-filter"><span class="glyphicon glyphicon-filter"></span></button>
+                    </div>
+                </div>
+                <table class="table">
+                    <thead>
+                        <tr class="filters">
+                            <th><input type="text" class="form-control" placeholder="#" disabled></th>
+                            <th><input type="text" class="form-control" placeholder="{% trans %}admin.modules.table.head.name{% endtrans %}" disabled></th>
+                            <th><input type="text" class="form-control" placeholder="{% trans %}admin.modules.table.head.description{% endtrans %}" disabled></th>
+                            <th><input type="text" class="form-control" placeholder="{% trans %}admin.modules.table.head.active{% endtrans %}" disabled></th>
+                            <th><input type="text" class="form-control" placeholder="{% trans %}admin.modules.table.head.menutext{% endtrans %}" disabled></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for module in modules %}
+                            <tr>
+                                <td></td>
+                            </tr>
+                        {% else %}
+                            <tr>
+                                <td colspan="6"><div class="alert alert-info">{% trans %}admin.modules.index.empty{% endtrans %}</div></td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -3,3 +3,9 @@ admin.sidebar.title: Administration
 menu.item.index: Overview
 admin.index.headline: 'Administration overview'
 menu.item.modules:    'Modules'
+admin.modules.headline: 'Modules'
+admin.modules.index.empty: 'No modules found'
+admin.modules.table.head.name: Name
+admin.modules.table.head.description: Description
+admin.modules.table.head.active: Active
+admin.modules.table.head.menutext: Menu item text

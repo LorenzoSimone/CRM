@@ -1,5 +1,3 @@
-<?php
-
 /*
     Copyright (C) 2014 Anton Dachauer (kontakt@webworks-nuernberg.de)
 
@@ -21,22 +19,26 @@
     02110, USA.
 */
 
-namespace Webworks\AdminBundle\Controller;
-
-use Symfony\Bundle\FrameworkBundle\Controller\Controller;
-use Symfony\Component\HttpFoundation\Request;
-
-class ModuleController extends Controller {
-
-    public function indexAction(Request $request) {
-        $repository = $this->getDoctrine()->getRepository('WebworksAdminBundle:SystemModule');
-        $query = $repository->createQueryBuilder('m')
-            ->getQuery();
-        $modules = $query->getResult();
-
-        $params = array(
-            'modules'           => $modules,
-        );
-        return $this->render('WebworksAdminBundle:Modules:index.html.twig',$params);
-    }
+.filterable {
+    margin-top: 15px;
+}
+.filterable .panel-heading .pull-right {
+    margin-top: -20px;
+}
+.filterable .filters input[disabled] {
+    background-color: transparent;
+    border: none;
+    cursor: auto;
+    box-shadow: none;
+    padding: 0;
+    height: auto;
+}
+.filterable .filters input[disabled]::-webkit-input-placeholder {
+    color: #333;
+}
+.filterable .filters input[disabled]::-moz-placeholder {
+    color: #333;
+}
+.filterable .filters input[disabled]:-ms-input-placeholder {
+    color: #333;
 }
