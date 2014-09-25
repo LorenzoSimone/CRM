@@ -136,4 +136,88 @@ class SystemModule
     {
         return $this->menuItemText;
     }
+    /**
+     * @var boolean
+     */
+    private $required;
+
+
+    /**
+     * Set required
+     *
+     * @param boolean $required
+     * @return SystemModule
+     */
+    public function setRequired($required)
+    {
+        $this->required = $required;
+
+        return $this;
+    }
+
+    /**
+     * Get required
+     *
+     * @return boolean 
+     */
+    public function getRequired()
+    {
+        return $this->required;
+    }
+    /**
+     * @var string
+     */
+    private $developerName;
+
+    /**
+     * @var string
+     */
+    private $developerUrl;
+
+
+    /**
+     * Set developerName
+     *
+     * @param string $developerName
+     * @return SystemModule
+     */
+    public function setDeveloperName($developerName)
+    {
+        $this->developerName = $developerName;
+
+        return $this;
+    }
+
+    /**
+     * Get developerName
+     *
+     * @return string 
+     */
+    public function getDeveloperName()
+    {
+        return $this->developerName;
+    }
+
+    /**
+     * Set developerUrl
+     *
+     * @param string $developerUrl
+     * @return SystemModule
+     */
+    public function setDeveloperUrl($developerUrl)
+    {
+        $this->developerUrl = $developerUrl;
+
+        return $this;
+    }
+
+    /**
+     * Get developerUrl
+     *
+     * @return string 
+     */
+    public function getDeveloperUrl()
+    {
+        return $this->developerUrl;
+    }
 }

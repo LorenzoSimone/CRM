@@ -17,8 +17,20 @@ Webworks\AdminBundle\Entity\SystemModule:
         active:
             type: boolean
             nullable: true
+        required:
+            type: boolean
         menuItemText:
             type: string
             length: 255
             column: menu_item_text
+        developerName:
+            type: string
+            length: 255
+            column: developer_name
+            nullable: true
+        developerUrl:
+            type: string
+            length: 255
+            column: developer_url
+            nullable: true
     lifecycleCallbacks: {  }

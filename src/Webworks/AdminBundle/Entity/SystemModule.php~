@@ -136,4 +136,32 @@ class SystemModule
     {
         return $this->menuItemText;
     }
+    /**
+     * @var boolean
+     */
+    private $required;
+
+
+    /**
+     * Set required
+     *
+     * @param boolean $required
+     * @return SystemModule
+     */
+    public function setRequired($required)
+    {
+        $this->required = $required;
+
+        return $this;
+    }
+
+    /**
+     * Get required
+     *
+     * @return boolean 
+     */
+    public function getRequired()
+    {
+        return $this->required;
+    }
 }

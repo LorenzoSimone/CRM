@@ -9,3 +9,7 @@ admin.modules.table.head.name: Name
 admin.modules.table.head.description: Description
 admin.modules.table.head.active: Active
 admin.modules.table.head.menutext: Menu item text
+admin.modules.btn.edit: Edit
+admin.modules.btn.disable: Disable
+admin.modules.btn.enable: Enable
+admin.modules.btn.required: required

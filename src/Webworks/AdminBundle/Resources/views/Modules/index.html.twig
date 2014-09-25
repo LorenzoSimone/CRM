@@ -19,18 +19,40 @@
                 <table class="table">
                     <thead>
                         <tr class="filters">
-                            <th><input type="text" class="form-control" placeholder="#" disabled></th>
-                            <th><input type="text" class="form-control" placeholder="{% trans %}admin.modules.table.head.name{% endtrans %}" disabled></th>
+                            <th style="width:20px;"><input type="text" class="form-control" placeholder="#" disabled></th>
+                            <th style="width:230px;"><input type="text" class="form-control" placeholder="{% trans %}admin.modules.table.head.name{% endtrans %}" disabled></th>
                             <th><input type="text" class="form-control" placeholder="{% trans %}admin.modules.table.head.description{% endtrans %}" disabled></th>
                             <th><input type="text" class="form-control" placeholder="{% trans %}admin.modules.table.head.active{% endtrans %}" disabled></th>
                             <th><input type="text" class="form-control" placeholder="{% trans %}admin.modules.table.head.menutext{% endtrans %}" disabled></th>
-                            <th></th>
+                            <th style="width:160px;"></th>
                         </tr>
                     </thead>
                     <tbody>
                         {% for module in modules %}
                             <tr>
-                                <td></td>
+                                <td>#{{ module.getId }}</td>
+                                <td>
+                                    <strong>{{ module.getName }}</strong><br>
+                                    <small class="text-muted">
+                                        Developer:
+                                        <a href="{{ module.getDeveloperUrl }}" target="_blank">{{ module.getDeveloperName }}</a>
+                                    </small>
+                                </td>
+                                <td>{{ module.getDescription }}</td>
+                                <td>{{ module.getActive }}</td>
+                                <td>{{ module.getMenuItemText }}</td>
+                                <td>
+                                    <div class="btn-group">
+                                        <a href="#" class="btn btn-sm btn-default"><i class="glyphicon glyphicon-pencil"></i> {% trans %}admin.modules.btn.edit{% endtrans %}</a>
+                                        {% if module.getActive == true and module.required == false %}
+                                            <a href="#" class="btn btn-sm btn-danger"><i class="glyphicon glyphicon-remove"></i> {% trans %}admin.modules.btn.disable{% endtrans %}</a>
+                                        {% elseif module.getActive == false %}
+                                            <a href="#" class="btn btn-sm btn-primary"><i class="glyphicon glyphicon-ok"></i> {% trans %}admin.modules.btn.enable{% endtrans %}</a>
+                                        {% elseif module.required == true %}
+                                            <a href="#" class="btn btn-sm btn-primary" disabled><i class="glyphicon glyphicon-flash"></i> {% trans %}admin.modules.btn.required{% endtrans %}</a>
+                                        {% endif %}
+                                    </div>
+                                </td>
                             </tr>
                         {% else %}
                             <tr>

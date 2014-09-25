@@ -25,12 +25,16 @@ namespace Webworks\FixturesBundle\DataFixtures\ORM;
 
 use Doctrine\Common\DataFixtures\FixtureInterface;
 use Doctrine\Common\Persistence\ObjectManager;
+use Webworks\FixturesBundle\DataFixtures\ORM\LoaderClasses\Modules;
 use Webworks\FixturesBundle\DataFixtures\ORM\LoaderClasses\Users;
 use Webworks\UserBundle\Entity\User;
 
 class LoadAllData implements FixtureInterface {
 
     public function load(ObjectManager $manager) {
+        // Loads the users for the test/development environment
         $users = Users::load($manager);
+        // Loads the modules
+        $modules = Modules::load($manager);
     }
 }

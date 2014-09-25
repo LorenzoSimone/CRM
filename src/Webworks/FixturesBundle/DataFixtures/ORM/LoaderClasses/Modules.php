@@ -24,34 +24,31 @@
 namespace Webworks\FixturesBundle\DataFixtures\ORM\LoaderClasses;
 
 use Doctrine\Common\Persistence\ObjectManager;
-use Webworks\UserBundle\Entity\User;
+use Webworks\AdminBundle\Entity\SystemModule;
 
-class Users {
+class Modules {
 
     public static function load(ObjectManager $manager) {
-        print "    > loading the users for test/development environment\n\r";
-        $users = array();
+        print "    > loading the modules\n\r";
 
-        $userAdmin = new User();
-        $userAdmin->setUsername('admin');
-        $userAdmin->setEmail('admin@testcrm.de');
-        $userAdmin->setPlainPassword('admin');
-        $userAdmin->setEnabled(true);
-        $userAdmin->addRole('ROLE_ADMIN');
+        $modules = array();
 
-        $userTest = new User();
-        $userTest->setUsername('test');
-        $userTest->setEmail('test@testcrm.de');
-        $userTest->setPlainPassword('test');
-        $userTest->setEnabled(true);
-        $userTest->addRole('ROLE_USER');
+        $adminMod = new SystemModule();
+        $adminMod->setActive(1);
+        $adminMod->setDescription('This module is required by system for module-management, system configuration and some more core features.');
+        $adminMod->setRequired(true);
+        $adminMod->setName('Administration module');
+        $adminMod->setMenuItemText('Administration');
+        $adminMod->setDeveloperName('Webworks Nürnberg');
+        $adminMod->setDeveloperUrl('http://www.webworks-nuernberg.de');
 
-        $manager->persist($userAdmin);
-        $manager->persist($userTest);
+        $modules['admin'] = $adminMod;
+
+        foreach ($modules as $mod) {
+            $manager->persist($mod);
+        }
         $manager->flush();
-        $users['admin'] = $userAdmin;
-        $users['test'] = $userTest;
 
-        return $users;
+        return $modules;
     }
-}
+} 
