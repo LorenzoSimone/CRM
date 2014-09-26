@@ -19,7 +19,7 @@
                 <table class="table">
                     <thead>
                         <tr class="filters">
-                            <th style="width:20px;"><input type="text" class="form-control" placeholder="#" disabled></th>
+                            <th style="width:30px;"><input type="text" class="form-control" placeholder="#" disabled></th>
                             <th style="width:230px;"><input type="text" class="form-control" placeholder="{% trans %}admin.modules.table.head.name{% endtrans %}" disabled></th>
                             <th><input type="text" class="form-control" placeholder="{% trans %}admin.modules.table.head.description{% endtrans %}" disabled></th>
                             <th><input type="text" class="form-control" placeholder="{% trans %}admin.modules.table.head.active{% endtrans %}" disabled></th>
@@ -43,13 +43,13 @@
                                 <td>{{ module.getMenuItemText }}</td>
                                 <td>
                                     <div class="btn-group">
-                                        <a href="#" class="btn btn-sm btn-default"><i class="glyphicon glyphicon-pencil"></i> {% trans %}admin.modules.btn.edit{% endtrans %}</a>
+                                        <a href="{{ path('webworks_admin_modules_edit', {'id': module.getId}) }}" class="btn btn-sm btn-default" data-toggle="modal" data-target="#modal"><i class="glyphicon glyphicon-pencil"></i> {% trans %}admin.modules.btn.edit{% endtrans %}</a>
                                         {% if module.getActive == true and module.required == false %}
                                             <a href="#" class="btn btn-sm btn-danger"><i class="glyphicon glyphicon-remove"></i> {% trans %}admin.modules.btn.disable{% endtrans %}</a>
                                         {% elseif module.getActive == false %}
                                             <a href="#" class="btn btn-sm btn-primary"><i class="glyphicon glyphicon-ok"></i> {% trans %}admin.modules.btn.enable{% endtrans %}</a>
                                         {% elseif module.required == true %}
-                                            <a href="#" class="btn btn-sm btn-primary" disabled><i class="glyphicon glyphicon-flash"></i> {% trans %}admin.modules.btn.required{% endtrans %}</a>
+                                            <a href="#" class="btn btn-sm btn-danger" disabled><i class="glyphicon glyphicon-flash"></i> {% trans %}admin.modules.btn.required{% endtrans %}</a>
                                         {% endif %}
                                     </div>
                                 </td>
@@ -63,5 +63,12 @@
                 </table>
             </div>
         </div>
+    </div>
+
+    <div class="modal fade" id="modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+        </div> <!-- /.modal-content -->
+    </div> <!-- /.modal-dialog -->
     </div>
 {% endblock %}

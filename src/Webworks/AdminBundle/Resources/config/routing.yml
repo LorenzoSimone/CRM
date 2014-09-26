@@ -5,3 +5,7 @@ webworks_admin_index:
 webworks_admin_modules_index:
     path:     /modules
     defaults: { _controller: WebworksAdminBundle:Module:index }
+
+webworks_admin_modules_edit:
+    path:     /modules/edit/{id}
+    defaults: { _controller: WebworksAdminBundle:Module:edit }

@@ -1,0 +1,16 @@
+.modal .navbar, .modal .sidebar, .modal .footer {
+    display: none;
+}
+
+.modal h1 {
+    font-size: 20px;
+    border: none;
+}
+
+.modal-content {
+    padding: 10px;
+}
+
+.modal .col-md-10 {
+    width: 100%;
+}

@@ -1,0 +1,35 @@
+{% extends 'WebworksAdminBundle::base.html.twig' %}
+
+{% block page_title %}{% trans %}admin.modules.edit.headline{% endtrans %} {{ module.getName }}{% endblock %}
+
+{% block headline %}
+    {% trans %}admin.modules.edit.headline{% endtrans %} {{ module.getName }}
+{% endblock %}
+
+{% block content %}
+    {{ form_start(form) }}
+
+    {% if module.getRequired == true %}
+        <div class="alert alert-info">
+            {% trans %}admin.modules.edit.message.required{% endtrans %}
+        </div>
+    {% endif %}
+
+    <div class="form-group col-md-12">
+        <label for="inputEmail3" class="col-md-4 control-label">{{ form_label(form.menuItemText) }}</label>
+        <div class="col-md-8">{{ form_widget(form.menuItemText, {'attr': {'class': 'col-md-12 form-control'}}) }}</div>
+    </div>
+    <div class="form-group col-md-12">
+        <label for="inputEmail3" class="col-md-4 control-label">{{ form_label(form.active) }}</label>
+        <div class="col-md-8">{{ form_widget(form.active, {'attr': {'class': 'col-md-12 form-control'}}) }}</div>
+    </div>
+    <div class="form-group col-md-12">
+        <label for="inputEmail3" class="col-md-4 control-label"></label>
+        <div class="col-md-8 btn-group">
+            <button type="submit" class="btn btn-success">{% trans %}admin.modules.edit.btn.save{% endtrans %}</button>
+            <button type="button" class="btn btn-default" data-dismiss="modal">{% trans %}admin.modules.edit.btn.cancel{% endtrans %}</button>
+        </div>
+    </div>
+
+    {{ form_end(form) }}
+{% endblock %}

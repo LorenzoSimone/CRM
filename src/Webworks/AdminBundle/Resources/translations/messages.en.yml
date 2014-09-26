@@ -13,3 +13,7 @@ admin.modules.btn.edit: Edit
 admin.modules.btn.disable: Disable
 admin.modules.btn.enable: Enable
 admin.modules.btn.required: required
+admin.modules.edit.headline: 'Edit modul:'
+admin.modules.edit.message.required: 'This module is required by the system.'
+admin.modules.edit.btn.save: 'Save'
+admin.modules.edit.btn.cancel: 'Cancel'

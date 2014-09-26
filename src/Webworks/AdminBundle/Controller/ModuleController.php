@@ -25,6 +25,7 @@ namespace Webworks\AdminBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Webworks\AdminBundle\Form\SystemModuleType;
 
 class ModuleController extends Controller {
 
@@ -37,6 +38,18 @@ class ModuleController extends Controller {
         $params = array(
             'modules'           => $modules,
         );
-        return $this->render('WebworksAdminBundle:Modules:index.html.twig',$params);
+        return $this->render('WebworksAdminBundle:Modules:index.html.twig', $params);
+    }
+
+    public function editAction(Request $request, $id) {
+        $module = $this->getDoctrine()->getRepository('WebworksAdminBundle:SystemModule')->find($id);
+
+        $form = $this->createForm(new SystemModuleType(), $module);
+
+        $params = array(
+            'form'              => $form->createView(),
+            'module'            => $module,
+        );
+        return $this->render('WebworksAdminBundle:Modules:edit.html.twig', $params);
     }
 }
