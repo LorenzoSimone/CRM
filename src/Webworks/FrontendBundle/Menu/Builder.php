@@ -38,6 +38,7 @@ class Builder extends ContainerAware {
         $query = $repository->createQueryBuilder('m')
             ->orderBy('m.menuOrder', 'ASC')
             ->where('m.required = 1 OR m.active = 1')
+            ->andWhere('m.showInMenu = 1')
             ->getQuery();
         $modules = $query->getResult();
 

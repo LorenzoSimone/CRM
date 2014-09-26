@@ -276,4 +276,32 @@ class SystemModule
     {
         return $this->systemMainRoute;
     }
+    /**
+     * @var boolean
+     */
+    private $showInMenu;
+
+
+    /**
+     * Set showInMenu
+     *
+     * @param boolean $showInMenu
+     * @return SystemModule
+     */
+    public function setShowInMenu($showInMenu)
+    {
+        $this->showInMenu = $showInMenu;
+
+        return $this;
+    }
+
+    /**
+     * Get showInMenu
+     *
+     * @return boolean 
+     */
+    public function getShowInMenu()
+    {
+        return $this->showInMenu;
+    }
 }

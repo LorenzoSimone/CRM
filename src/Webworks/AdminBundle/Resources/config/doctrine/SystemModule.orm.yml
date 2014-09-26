@@ -1,6 +1,6 @@
 Webworks\AdminBundle\Entity\SystemModule:
     type: entity
-    table: null
+    table: administration_system_module
     id:
         id:
             type: integer
@@ -15,6 +15,9 @@ Webworks\AdminBundle\Entity\SystemModule:
             type: text
             nullable: true
         active:
+            type: boolean
+            nullable: true
+        showInMenu:
             type: boolean
             nullable: true
         required:

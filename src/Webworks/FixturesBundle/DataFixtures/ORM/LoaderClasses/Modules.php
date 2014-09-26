@@ -35,7 +35,7 @@ class Modules {
 
         $adminMod = new SystemModule();
         $adminMod->setActive(1);
-        $adminMod->setDescription('This module is required by system for module-management, system configuration and some more core features.');
+        $adminMod->setDescription('This module is required for module-management, system configuration and core administration features.');
         $adminMod->setRequired(true);
         $adminMod->setName('Administration module');
         $adminMod->setMenuItemText('Administration');
@@ -44,7 +44,20 @@ class Modules {
         $adminMod->setMenuOrder(1);
         $adminMod->setSystemMainRoute('webworks_admin_index');
 
+        $frontendMod = new SystemModule();
+        $frontendMod->setActive(1);
+        $frontendMod->setDescription('Basic frontend module. Required.');
+        $frontendMod->setRequired(true);
+        $frontendMod->setName('Frontend module');
+        $frontendMod->setMenuItemText('');
+        $frontendMod->setDeveloperName('Webworks Nürnberg');
+        $frontendMod->setDeveloperUrl('http://www.webworks-nuernberg.de');
+        $frontendMod->setMenuOrder(2);
+        $frontendMod->setShowInMenu(false);
+        $frontendMod->setSystemMainRoute('');
+
         $modules['admin'] = $adminMod;
+        $modules['frontend'] = $frontendMod;
 
         foreach ($modules as $mod) {
             $manager->persist($mod);
