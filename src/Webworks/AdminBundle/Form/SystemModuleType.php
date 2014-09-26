@@ -9,12 +9,21 @@ use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 class SystemModuleType extends AbstractType
 {
 
+    private $action;
+
+    public function __construct($action) {
+        $this->action = $action;
+    }
+
         /**
      * @param FormBuilderInterface $builder
      * @param array $options
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
+        $builder->setAction($this->action);
+        $builder->setMethod('POST');
+
         $builder
             ->add('menuItemText', 'text', array(
                 'required'      => true,

@@ -41,6 +41,8 @@ class Modules {
         $adminMod->setMenuItemText('Administration');
         $adminMod->setDeveloperName('Webworks Nürnberg');
         $adminMod->setDeveloperUrl('http://www.webworks-nuernberg.de');
+        $adminMod->setMenuOrder(1);
+        $adminMod->setSystemMainRoute('webworks_admin_index');
 
         $modules['admin'] = $adminMod;
 

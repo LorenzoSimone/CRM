@@ -23,6 +23,10 @@ Webworks\AdminBundle\Entity\SystemModule:
             type: string
             length: 255
             column: menu_item_text
+        menuOrder:
+            type: integer
+            column: menu_order
+            nullable: true
         developerName:
             type: string
             length: 255
@@ -33,4 +37,8 @@ Webworks\AdminBundle\Entity\SystemModule:
             length: 255
             column: developer_url
             nullable: true
+        systemMainRoute:
+            type: string
+            length: 255
+            column: system_main_route
     lifecycleCallbacks: {  }

@@ -220,4 +220,60 @@ class SystemModule
     {
         return $this->developerUrl;
     }
+    /**
+     * @var integer
+     */
+    private $menuOrder;
+
+    /**
+     * @var string
+     */
+    private $systemMainRoute;
+
+
+    /**
+     * Set menuOrder
+     *
+     * @param integer $menuOrder
+     * @return SystemModule
+     */
+    public function setMenuOrder($menuOrder)
+    {
+        $this->menuOrder = $menuOrder;
+
+        return $this;
+    }
+
+    /**
+     * Get menuOrder
+     *
+     * @return integer 
+     */
+    public function getMenuOrder()
+    {
+        return $this->menuOrder;
+    }
+
+    /**
+     * Set systemMainRoute
+     *
+     * @param string $systemMainRoute
+     * @return SystemModule
+     */
+    public function setSystemMainRoute($systemMainRoute)
+    {
+        $this->systemMainRoute = $systemMainRoute;
+
+        return $this;
+    }
+
+    /**
+     * Get systemMainRoute
+     *
+     * @return string 
+     */
+    public function getSystemMainRoute()
+    {
+        return $this->systemMainRoute;
+    }
 }

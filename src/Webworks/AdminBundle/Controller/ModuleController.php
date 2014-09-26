@@ -44,7 +44,19 @@ class ModuleController extends Controller {
     public function editAction(Request $request, $id) {
         $module = $this->getDoctrine()->getRepository('WebworksAdminBundle:SystemModule')->find($id);
 
-        $form = $this->createForm(new SystemModuleType(), $module);
+        $form = $this->createForm(new SystemModuleType($this->generateUrl('webworks_admin_modules_edit', array(
+            'id'    => $id,
+        ))), $module);
+
+        if ($request->isMethod('POST')) {
+            $form->handleRequest($request);
+            $data = $form->getData();
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($data);
+            $em->flush();
+
+            return $this->redirect($this->generateUrl('webworks_admin_modules_index'));
+        }
 
         $params = array(
             'form'              => $form->createView(),

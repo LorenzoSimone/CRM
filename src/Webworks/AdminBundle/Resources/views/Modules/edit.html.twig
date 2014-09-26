@@ -7,7 +7,7 @@
 {% endblock %}
 
 {% block content %}
-    {{ form_start(form) }}
+    {{ form_start(form, {attr: {'class': 'form-horizontal jquery_form'}}) }}
 
     {% if module.getRequired == true %}
         <div class="alert alert-info">

@@ -32,7 +32,18 @@ class Builder extends ContainerAware {
         $menu = $factory->createItem('root');
         $menu->setChildrenAttributes(array('class' => 'nav navbar-nav'));
 
-        $menu->addChild('menu.item.admin', array('route' => 'webworks_admin_index'));
+        $doctrine = $this->container->get('doctrine');
+
+        $repository = $doctrine->getRepository('WebworksAdminBundle:SystemModule');
+        $query = $repository->createQueryBuilder('m')
+            ->orderBy('m.menuOrder', 'ASC')
+            ->where('m.required = 1 OR m.active = 1')
+            ->getQuery();
+        $modules = $query->getResult();
+
+        foreach ($modules as $module) {
+            $menu->addChild($module->getMenuItemText(), array('route' => $module->getSystemMainRoute()));
+        }
 
         return $menu;
     }
