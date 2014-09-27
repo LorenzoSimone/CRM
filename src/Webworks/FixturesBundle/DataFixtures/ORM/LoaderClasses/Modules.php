@@ -43,6 +43,7 @@ class Modules {
         $adminMod->setDeveloperUrl('http://www.webworks-nuernberg.de');
         $adminMod->setMenuOrder(1);
         $adminMod->setSystemMainRoute('webworks_admin_index');
+        $adminMod->setShowInMenu(true);
 
         $frontendMod = new SystemModule();
         $frontendMod->setActive(1);
